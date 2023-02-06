@@ -1,0 +1,54 @@
+#cameraDisplayBox {
+  position: absolute;
+  top: 60px;
+  right:10px;
+  z-index: 1;
+  width: 200px;
+  border: 0px lightgrey solid;
+}
+
+#cameraVideoStreamBox {
+  position: relative;
+  width: 200px;
+  height: 150px;
+}
+
+#cameraOverlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#cameraOverlayCircle {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid red;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  margin: -25px 0px 0px -25px;  /* offset with half the width and half height to get circle in the center. */
+}
+
+.cameraOverlayVLine {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 1px;
+  background: red;
+  left: 50%;
+}
+
+.cameraOverlayHLine {
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: red;
+  top: 50%;
+}

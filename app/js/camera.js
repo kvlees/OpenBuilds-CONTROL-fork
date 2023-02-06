@@ -1,6 +1,6 @@
 // IDs of the relevant HTML page elements.
 CAMERA_DROPDOWN_ELEMENT = "cameraSelect";
-CAMERA_IMAGE_ELEMENT = "cameraBox";
+CAMERA_IMAGE_ELEMENT = "cameraVideo";
 
 
 function streamSelectedCamera() {
@@ -10,12 +10,14 @@ function streamSelectedCamera() {
   if (deviceId === "") {
     console.log('No camera selected.');
     cameraBox.srcObject = null;
+    updateCameraOverlay();
     return;
   }
 
   navigator.mediaDevices.getUserMedia({video: {deviceId: {exact: deviceId}}})
       .then((device) => {
         cameraBox.srcObject = device;
+        updateCameraOverlay();
       })
       .catch(function (err) {
         console.error(`${err.name}: ${err.message}`);
@@ -35,6 +37,15 @@ function populateCameraDropDown() {
       .catch((err) => {
         console.error(`${err.name}: ${err.message}`);
       });
+}
+
+function updateCameraOverlay() {
+  const circleSize = document.getElementById("cameraOverlaySlider").value;
+  const circleSpan = document.getElementById('cameraOverlayCircle');
+  circleSpan.style.width = circleSize + 'px';
+  circleSpan.style.height = circleSize + 'px';
+  circleSpan.style.marginTop = -(circleSize / 2) + 'px';
+  circleSpan.style.marginLeft = -(circleSize/ 2) + 'px';
 }
 
 window.addEventListener('load', function() {
