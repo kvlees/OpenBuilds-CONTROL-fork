@@ -1147,11 +1147,17 @@
                   </div>
                   <div class="section" id="tab-three">
                     <div id="renderArea"></div>
-                    <div style="position: absolute; top: 10px; right:10px; z-index: 1; max-width: 100px; max-width: 100px;" id="overlayimg">
-                      <!-- <img src="img/mch/acro55.png" style="max-width:100%; max-height:100%;">
-                    <span style="position: absolute; top: 3px; right:3px; z-index: 1;" class="fas fa-cogs"></span> -->
+                    <div style="position: absolute; top: 10px; right:10px; z-index: 1; max-width: 100px;" id="overlayimg">
+                      <!-- <img src="img/mch/acro55.png" style="max-width:100%; max-height:100%;"> -->
+                      <span style="position: absolute; top: 3px; right:3px; z-index: 1;" class="fas fa-cogs"></span>
                     </div>
-                    <div class="fixed-bottom m-3 mb-9">
+                    <div style="position: absolute; top: 60px; right:10px; z-index: 1; width: 200px; border: 1px lightgrey solid;">
+                        <select data-prepend="&nbsp;<i class='fas fa-video'></i>" id="cameraSelect" class="text-small" onchange="streamSelectedCamera()">
+                          <option value="">None</option>
+                      </select>
+                      <video width="200px" autoplay="true" id="cameraBox"></video>
+                    </div>
+                    <div class="fixed-bottom m-3 mb-9" style="border: 1px grey solid;">
                       <button class="button dark" onclick="simSpeed();"><span class="icon"><span class="fas fa-tachometer-alt"></span></span><span class="caption"><span id="simspeedval">1</span>x</span>
                       </button>
                       <button id="runSimBtn" title="Run simulation" class="button dark drop-shadow" onclick="sim(0)"><i class="fas fa-fighter-jet"></i> Simulate</button>&nbsp;
@@ -1163,6 +1169,9 @@
                   </div>
                   <div class="section" id="tab-four">
                     <div id="macros"></div>
+                  </div>
+                  <div class="section" id="tab-five">
+                    <div>Hello world</div>
                   </div>
                 </div>
               </nav>
@@ -2075,6 +2084,8 @@
   <script type="text/javascript" src="js/toolchange.js"></script>
 
   <script src="/lib/furcanIconPicker/iconpicker-1.5.0.js"></script>
+
+  <script type="text/javascript" src="js/camera.js"></script>
 
 </html>
 <!--  -->
