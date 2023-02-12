@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/splash.css" />
     <link rel="stylesheet" href="css/buttons.css" />
     <link rel="stylesheet" href="css/probev2.css" />
+    <link rel="stylesheet" href="css/camera.css" />
     <link rel="stylesheet" href="/lib/furcanIconPicker/iconpicker-1.5.0.css" />
   </head>
 
@@ -1151,11 +1152,21 @@
                       <!-- <img src="img/mch/acro55.png" style="max-width:100%; max-height:100%;"> -->
                       <span style="position: absolute; top: 3px; right:3px; z-index: 1;" class="fas fa-cogs"></span>
                     </div>
-                    <div style="position: absolute; top: 60px; right:10px; z-index: 1; width: 200px; border: 1px lightgrey solid;">
-                        <select data-prepend="&nbsp;<i class='fas fa-video'></i>" id="cameraSelect" class="text-small" onchange="streamSelectedCamera()">
+                    <div id="cameraDisplayBox">
+                      <select data-prepend="&nbsp;<i class='fas fa-video'></i>" id="cameraSelect" class="text-small" onchange="streamSelectedCamera()">
                           <option value="">None</option>
                       </select>
-                      <video width="200px" autoplay="true" id="cameraBox"></video>
+                      <input id="cameraOverlaySlider" data-role="slider" data-value="50" data-min="10" data-max="100" data-accuracy="1" data-on-stop="updateCameraOverlay()">
+                      <div id="cameraVideoStreamBox">
+                        <div>
+                           <video width="200px" autoplay="true" id="cameraVideo"></video>
+                        </div>
+                        <div id="cameraOverlay">
+                           <span id="cameraOverlayCircle"></span>
+                           <span class="cameraOverlayVLine"></span>
+                           <span class="cameraOverlayHLine"></span>
+                        </div>
+                       </div>
                     </div>
                     <div class="fixed-bottom m-3 mb-9" style="border: 1px grey solid;">
                       <button class="button dark" onclick="simSpeed();"><span class="icon"><span class="fas fa-tachometer-alt"></span></span><span class="caption"><span id="simspeedval">1</span>x</span>
