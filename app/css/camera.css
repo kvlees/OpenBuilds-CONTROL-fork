@@ -3,14 +3,14 @@
   top: 60px;
   right:10px;
   z-index: 1;
-  width: 200px;
+  width: 400px;
   border: 0px lightgrey solid;
 }
 
 #cameraVideoStreamBox {
   position: relative;
-  width: 200px;
-  height: 150px;
+  width: 400px;
+  height: 300px;
 }
 
 #cameraOverlay {

@@ -1154,12 +1154,12 @@
                     </div>
                     <div id="cameraDisplayBox">
                       <select data-prepend="&nbsp;<i class='fas fa-video'></i>" id="cameraSelect" class="text-small" onchange="streamSelectedCamera()">
-                          <option value="">None</option>
+                          <option value="">No camera</option>
                       </select>
-                      <input id="cameraOverlaySlider" data-role="slider" data-value="50" data-min="10" data-max="100" data-accuracy="1" data-on-stop="updateCameraOverlay()">
+                      <input id="cameraOverlaySlider" data-role="slider" data-value="50" data-min="10" data-max="250" data-accuracy="2" data-on-stop="updateCameraOverlay()">
                       <div id="cameraVideoStreamBox">
                         <div>
-                           <video width="200px" autoplay="true" id="cameraVideo"></video>
+                           <video width="100%" autoplay="true" id="cameraVideo"></video>
                         </div>
                         <div id="cameraOverlay">
                            <span id="cameraOverlayCircle"></span>
